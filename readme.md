@@ -41,8 +41,8 @@ your-repo-name/
 ```
 
 ## Screenshot
-![Project Screenshot](path/to/screenshot.png)
+![Project Screenshot](https://github.com/Rayyan9477/Hate-Speech-Detection/blob/main/hate%20speech.png)
 
 ## Contact
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+- LinkedIn: [Rayyan Ahmed](https://www.linkedin.com/in/rayyan-ahmed9477/)
+- Email: rayyanahmed265@yahoo.com
