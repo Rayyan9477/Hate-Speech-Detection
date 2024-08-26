@@ -18,8 +18,8 @@ pip install -r requirements.txt
 ## How to Run the Project
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/Rayyan9477/Hate-Speech-Detection
+    cd Hate Speech Detection
     ```
 2. Install the required packages:
     ```sh
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ## Project Structure
 ```
-your-repo-name/
+Hate Speech Detection/
 │
 |   twitter.csv
 ├── requirements.txt
