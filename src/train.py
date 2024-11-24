@@ -10,9 +10,13 @@ def train_model():
     data = load_dataset('data/dataset.csv')
     train_data, val_data = train_test_split(data, test_size=0.2, random_state=42)
 
-    # Initialize tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained("KoalaAI/HateSpeechDetector")
-    model = AutoModelForSequenceClassification.from_pretrained("KoalaAI/HateSpeechDetector", num_labels=3)
+    # Initialize tokenizer and model with a smaller pre-trained model to reduce resource usage
+    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+    model = AutoModelForSequenceClassification.from_pretrained(
+        "distilbert-base-uncased",
+        num_labels=3,
+        ignore_mismatched_sizes=True
+    )
 
     # Create datasets
     train_dataset = HateSpeechDataset(
@@ -22,12 +26,12 @@ def train_model():
         val_data['clean_text'], val_data['label'], tokenizer
     )
 
-    # Training arguments
+    # Training arguments with reduced batch size to save memory
     training_args = TrainingArguments(
         output_dir='./results',
         num_train_epochs=1,
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=64,
+        per_device_train_batch_size=4,      # Reduced batch size
+        per_device_eval_batch_size=8,       # Reduced batch size
         evaluation_strategy='epoch',
         save_strategy='epoch',
         logging_dir='./logs',
