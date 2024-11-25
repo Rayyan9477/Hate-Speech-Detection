@@ -1,4 +1,4 @@
-# split_model_files.py
+# split_model_files.py to break the model files to smaller chunks
 import os
 
 def split_file(file_path, chunk_size=99 * 1024 * 1024):
