@@ -1,7 +1,7 @@
 # split_model_files.py
 import os
 
-def split_file(file_path, chunk_size=100 * 1024 * 1024):
+def split_file(file_path, chunk_size=99 * 1024 * 1024):
     with open(file_path, 'rb') as f:
         chunk_number = 0
         while True:
@@ -18,7 +18,7 @@ def split_model_directory(model_dir):
     for root, _, files in os.walk(model_dir):
         for file in files:
             file_path = os.path.join(root, file)
-            if os.path.getsize(file_path) > 100 * 1024 * 1024:
+            if os.path.getsize(file_path) > 99 * 1024 * 1024:
                 split_file(file_path)
 
 if __name__ == "__main__":
